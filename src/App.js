@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./Components/Card";
 import Chat from "./Components/Chat";
+import { clone } from "./utils";
 
 function App() {
   const [selectedId, setSelectedId] = useState(-1);
@@ -13,7 +14,7 @@ function App() {
       .then((res) => res.json())
       .then((cardsData) => {
         setCards(cardsData);
-        setFilteredCards(JSON.parse(JSON.stringify(cardsData)));
+        setFilteredCards(clone(cardsData));
       });
   }, []);
 

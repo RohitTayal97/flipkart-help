@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Message from "../Message";
 import "./chat.css";
+import { clone, getDateString } from "../../utils";
 
 export default function Chat({ data, updateCard }) {
   const [newMessage, setNewMessage] = useState("");
@@ -20,7 +21,7 @@ export default function Chat({ data, updateCard }) {
       return;
     }
 
-    const newData = JSON.parse(JSON.stringify(data));
+    const newData = clone(data);
     newData.messageList.push({
       messageId: ("msg" + Date.now()).substr(0, 5),
       message: newMessage !== "" ? newMessage : msg ? msg : null,
@@ -44,7 +45,7 @@ export default function Chat({ data, updateCard }) {
     }
 
     return data.messageList.map((message, index) => {
-      newDate = new Date(message.timestamp).toLocaleDateString();
+      newDate = getDateString(message.timestamp);
 
       if (newDate !== lastDate) {
         lastDate = newDate;

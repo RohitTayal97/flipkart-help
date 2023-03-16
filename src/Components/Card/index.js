@@ -1,5 +1,6 @@
 import React from "react";
 import "./card.css";
+import { getDateString } from "../../utils";
 
 export default function Card({ data, handleSelect }) {
   const messageListLength = data.messageList.length;
@@ -19,7 +20,7 @@ export default function Card({ data, handleSelect }) {
         </div>
       </div>
       <div className="card-date">
-        {new Date(data.latestMessageTimestamp).toLocaleDateString()}
+        {getDateString(data.latestMessageTimestamp)}
       </div>
     </div>
   );

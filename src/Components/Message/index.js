@@ -1,5 +1,6 @@
 import React from "react";
 import "./message.css";
+import { getTimeString } from "../../utils";
 
 export default function Message({ messageBody, isLatest, addMessage }) {
   return (
@@ -7,11 +8,7 @@ export default function Message({ messageBody, isLatest, addMessage }) {
       <div className="message-text">{messageBody.message}</div>
       {messageBody.messageType !== "optionedMessage" && (
         <div className="message-time">
-          {new Date(messageBody.timestamp).toLocaleTimeString("en-US", {
-            hour: "numeric",
-            minute: "numeric",
-            hour12: true,
-          })}
+          {getTimeString(messageBody.timestamp)}
         </div>
       )}
       {messageBody.options?.map((option, index) => (

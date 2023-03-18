@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import Card from "./Components/Card";
 import Chat from "./Components/Chat";
@@ -6,14 +6,14 @@ import { clone } from "./utils";
 
 function App() {
   const [selectedId, setSelectedId] = useState(-1);
-  const [cards, setCards] = useState([]);
   const [filteredCards, setFilteredCards] = useState([]);
+  const cardsRef = useRef([]);
 
   useEffect(() => {
     fetch("https://my-json-server.typicode.com/codebuds-fk/chat/chats")
       .then((res) => res.json())
       .then((cardsData) => {
-        setCards(cardsData);
+        cardsRef.current = cardsData;
         setFilteredCards(clone(cardsData));
       });
   }, []);
@@ -26,8 +26,8 @@ function App() {
       return card;
     };
 
+    cardsRef.current = cardsRef.current.map(updater);
     setFilteredCards(filteredCards.map(updater));
-    setCards(cards.map(updater));
   };
 
   const handleSelect = (id) => {
@@ -38,26 +38,26 @@ function App() {
         return { ...card, isSelected: false };
       }
     };
-    setCards(cards.map(updater));
+    cardsRef.current = cardsRef.current.map(updater);
     setFilteredCards(filteredCards.map(updater));
     setSelectedId(id);
   };
 
   const getCardById = (id) => {
-    return cards.filter((card) => card.id === id)[0];
+    return cardsRef.current.filter((card) => card.id === id)[0];
   };
 
   const handleSearch = (e) => {
     const value = e.target.value.toUpperCase();
     const length = value.length;
 
-    const filteredByorderId = cards.filter((card) => {
+    const filteredByorderId = cardsRef.current.filter((card) => {
       return card.orderId.substr(0, length).toUpperCase() === value;
     });
     if (filteredByorderId.length > 0) {
       setFilteredCards(filteredByorderId);
     } else {
-      const filteredByTitle = cards.filter((card) => {
+      const filteredByTitle = cardsRef.current.filter((card) => {
         return card.title.substr(0, length).toUpperCase() === value;
       });
       setFilteredCards(filteredByTitle);

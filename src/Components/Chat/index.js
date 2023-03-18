@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import Message from "../Message";
 import "./chat.css";
 import { clone, getDateString } from "../../utils";
 
 export default function Chat({ data, updateCard }) {
-  const [newMessage, setNewMessage] = useState("");
+  const inputRef = useRef();
 
   const handleInputKeyUp = (e) => {
     if (e.keyCode === 13) {
@@ -12,11 +12,8 @@ export default function Chat({ data, updateCard }) {
     }
   };
 
-  const handleNewMessageChange = (e) => {
-    setNewMessage(e.target.value);
-  };
-
   const handleSendMessage = (msg) => {
+    const newMessage = inputRef.current.value;
     if (newMessage === "" && !msg) {
       return;
     }
@@ -30,7 +27,7 @@ export default function Chat({ data, updateCard }) {
       messageType: "text",
     });
     updateCard(newData);
-    setNewMessage("");
+    inputRef.current.value = "";
   };
 
   const GetChatBody = () => {
@@ -86,8 +83,7 @@ export default function Chat({ data, updateCard }) {
         className="chat-msg"
         type="text"
         placeholder="Type a Message..."
-        onChange={handleNewMessageChange}
-        value={newMessage}
+        ref={inputRef}
         onKeyUp={handleInputKeyUp}
       ></input>
       <button className="chat-send" onClick={handleSendMessage}>

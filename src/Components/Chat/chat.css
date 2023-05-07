@@ -42,12 +42,15 @@
 }
 
 .chat-msg {
-  height: 60px;
+  height: 55px;
 }
 
 .chat-send {
   position: absolute;
   bottom: 0px;
   right: 0px;
+  height: 55px;
+  padding: 15px;
+  width: 90px;
   cursor: pointer;
 }

@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import Card from "./Components/Card";
 import Chat from "./Components/Chat";
+import cardsData from "./data/data.json";
 import { clone } from "./utils";
 
 function App() {
@@ -10,12 +11,8 @@ function App() {
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    fetch("https://my-json-server.typicode.com/codebuds-fk/chat/chats")
-      .then((res) => res.json())
-      .then((cardsData) => {
-        cardsRef.current = cardsData;
-        setFilteredCards(clone(cardsData));
-      });
+    cardsRef.current = cardsData;
+    setFilteredCards(clone(cardsData));
   }, []);
 
   const updateCard = (updatedCard) => {

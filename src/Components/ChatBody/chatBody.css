@@ -1,0 +1,16 @@
+.message-none {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.message-date {
+  background-color: white;
+  color: #878787;
+  border-radius: 25px;
+  margin: auto;
+  display: table;
+  padding: 8px;
+  font-size: 0.8em;
+}

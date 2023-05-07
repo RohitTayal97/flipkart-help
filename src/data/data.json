@@ -52,13 +52,6 @@
             "optionText": "Go to My Orders"
           }
         ]
-      },
-      {
-        "messageId": "msg4",
-        "message": "I want a callback",
-        "timestamp": 1631105237669,
-        "sender": "USER",
-        "messageType": "text"
       }
     ]
   },
@@ -208,7 +201,24 @@
     "imageURL": "https://rukminim1.flixcart.com/image/300/300/k9yjb0w0/mask-respirator/q/m/b/12540-black-l-wildcraft-original-imafrmy4xuzgm8sa.jpeg?q=90",
     "orderId": "OD1234567896",
     "latestMessageTimestamp": 1598517840547,
-    "messageList": []
+    "messageList": [
+      {
+        "messageId": "msg3",
+        "message": "Hi, what can I help you with?",
+        "timestamp": 1598517840547,
+        "sender": "BOT",
+        "messageType": "optionedMessage",
+        "options": [
+          {
+            "optionText": "Request a call",
+            "optionSubText": "Response time: Within 5 minutes"
+          },
+          {
+            "optionText": "Go to My Orders"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 8,
@@ -224,7 +234,24 @@
     "imageURL": "https://rukminim1.flixcart.com/image/300/300/k8ro3gw0/hand-wash-sanitizer/f/g/2/500-total-hand-sanitizer-bottle-lifebuoy-original-imafqpcsnxfb7qxr.jpeg?q=90",
     "orderId": "OD1234567898",
     "latestMessageTimestamp": 1589519579618,
-    "messageList": []
+    "messageList": [
+      {
+        "messageId": "msg3",
+        "message": "Hi, what can I help you with?",
+        "timestamp": 1589519579618,
+        "sender": "BOT",
+        "messageType": "optionedMessage",
+        "options": [
+          {
+            "optionText": "Request a call",
+            "optionSubText": "Response time: Within 5 minutes"
+          },
+          {
+            "optionText": "Go to My Orders"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 10,
@@ -232,6 +259,19 @@
     "imageURL": "https://rukminim1.flixcart.com/image/300/300/kalecnk0/hand-wash-sanitizer/f/g/2/500-total-hand-sanitizer-bottle-lifebuoy-original-imafs4yfahvcag5v.jpeg?q=90",
     "orderId": "OD1234567899",
     "latestMessageTimestamp": 1589468548314,
-    "messageList": []
+    "messageList": [
+      {
+        "messageId": "msg1",
+        "message": "Hi, what can I help you with?",
+        "timestamp": 1589468548314,
+        "sender": "BOT"
+      },
+      {
+        "messageId": "msg2",
+        "message": "What's the delivery status of the product",
+        "timestamp": 1589468548314,
+        "sender": "USER"
+      }
+    ]
   }
 ]

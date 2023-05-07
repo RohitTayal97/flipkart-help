@@ -1,6 +1,6 @@
 import React from "react";
 import "./message.css";
-import { getTimeString } from "../../utils";
+import { OPTIONS_TO_MESSAGE, getTimeString } from "../../utils";
 
 export default function Message({ messageBody, isLatest, addMessage }) {
   return (
@@ -18,7 +18,9 @@ export default function Message({ messageBody, isLatest, addMessage }) {
         >
           <div
             className="message-options-text"
-            onClick={() => isLatest && addMessage("I want a callback")}
+            onClick={() =>
+              isLatest && addMessage(OPTIONS_TO_MESSAGE[option.optionText])
+            }
           >
             {option.optionText}
           </div>

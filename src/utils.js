@@ -8,6 +8,11 @@ const DAYS = [
   "Saturday",
 ];
 
+export const OPTIONS_TO_MESSAGE = {
+  "Request a call": "I want a callback",
+  "Go to My Orders": "I want to check my orders",
+};
+
 export function getDateString(timeStamp) {
   const date = new Date(timeStamp);
   const daysDiff = Math.round((Date.now() - date.getTime()) / 86400000);

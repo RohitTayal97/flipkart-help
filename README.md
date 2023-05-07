@@ -1,20 +1,29 @@
-# Product Features
+# Flipkart Help Chat
+
+This is a chat app designed for Flipkart customer support. It allows users to view a list of chats and open a selected chat to see the conversation history. The chat list can be filtered by chat title or order ID. Each chat item displays relevant information, such as product image, chat title, order ID, and date of the last message. Users can send text messages from an input box, and an inline date label separates messages on different dates.
+
+## Deployed at
+
+https://flipkart-help-chat.netlify.app/
+
+## Funtionalities
 
 ## Chat List
 
-- The chat list loads with a list of chats as fetched from the api source.
-- Clicking on a chat list opens the respective chat with the messages for that particular chat.
-- Each chat list item shows basic chat information about that chat like Product Image, Chat Title, Order ID, Date in DD/MM/YYYY format of the last message.
-- You can filter the Chat List via Chat Title / Order ID.
-- The current selected chat is highlighted.
+- The app loads a chat list from a JSON file in the data folder.
+- Clicking on a chat highlights it and opens the respective chat with its messages.
+- Basic information for each chat is displayed, including product image, chat title, order ID, and date of the last message in DD/MM/YYYY format.
+- The chat list can be filtered by chat title or order ID.
 
 ## Single Chat View
 
-- Shows the messages for a particular chat in bottom to top order, i.e., The latest message is at the bottom of the chat.
-- There are two message types - ‘text’ and ‘optionedMessage’. Both are displayed differently. Please refer to the mocks for the same.
-- The messages are either left aligned or right aligned depending on the ‘sender’. If the ‘sender’ is ‘BOT’ the message is left aligned, else if the ‘sender’ is ‘USER’, it is right aligned.
-- Show an input box similar to the mock. The message sent from here should get added to that particular chat as a ‘USER’ side message of type ‘text’.
-- If there are no messages for a chat, a message is displayed - “Send a message to start chatting”.
-- Show an inline Date label as a separation between messages on different dates in DD/MM/YYYY format. You can show labels like ‘Today’, ‘Yesterday’, etc. for dates upto a week before the current date.
-- The message options for an ‘optionedMessage’ are disabled if it’s not the latest message (it’s not the message at the bottom end of the chat).
-- On clicking “Request a Call” a message is added from the USER side (right side) saying “I want a callback”.
+- Messages for a particular chat are displayed in a generic chat format, with the latest message shown at the bottom.
+- Messages are left-aligned or right-aligned based on the sender, with BOT messages left-aligned and USER messages right-aligned.
+- Two message types are supported: 'text'(normal) and 'optionedMessage', which are displayed differently.
+- Like Clicking on the "Request a Call" option in an opinionated message adds a message from the user saying "I want a callback".
+- Options for 'optionedMessage' messages are disabled if they are not the latest message in the chat.
+- User can send messages using the input box at the bottom of chatbox.
+- If there are no messages in a chat, a message is displayed in the center of the chatbox prompting the user to send a message to start chatting.
+- Dates are displayed inline as labels in DD/MM/YYYY format, with labels like 'Today', 'Yesterday', etc. shown for dates up to a week before the current date.
+
+To run the app locally, Use `npm start` to run the app. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

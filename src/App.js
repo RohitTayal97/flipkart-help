@@ -55,7 +55,7 @@ function App() {
       setFilteredCards(filteredByorderId);
     } else {
       const filteredByTitle = cardsRef.current.filter((card) => {
-        return card.title.substr(0, length).toUpperCase() === value;
+        return card.title.toUpperCase().includes(value);
       });
       setFilteredCards(filteredByTitle);
     }

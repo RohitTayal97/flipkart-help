@@ -1,6 +1,6 @@
 # Flipkart Help Chat
 
-This is a chat app designed for Flipkart customer support. It allows users to view a list of chats and open a selected chat to see the conversation history. The chat list can be filtered by chat title or order ID. Each chat item displays relevant information, such as product image, chat title, order ID, and date of the last message. Users can send text messages from an input box, and an inline date label separates messages on different dates.
+This is Flipkart customer support app. It allows users to view a list of orders and open a selected order to see the conversation history. The order list can be filtered by order name or order ID. Each order item displays relevant information, such as product image, order name, order ID, and date of the last message. Users can send text messages from an input box, and an inline date label separates messages on different dates.
 
 ## Deployed at
 
@@ -8,17 +8,17 @@ https://flipkart-help-chat.netlify.app/
 
 ## Funtionalities
 
-## Chat List
+## Order List
 
-- The app loads a chat list from a JSON file in the data folder.
-- Clicking on a chat highlights it and opens the respective chat with its messages.
-- Basic information for each chat is displayed, including product image, chat title, order ID, and date of the last message in DD/MM/YYYY format.
-- The chat list can be filtered by chat title or order ID.
+- The app loads an order list from a JSON file in the data folder.
+- Clicking on an order highlights it and opens the respective chat with its messages.
+- Basic information for each order is displayed, including product image, order name, order ID, and date of the last message in DD/MM/YYYY format.
+- The order list can be filtered by order name or order ID.
 
 ## Single Chat View
 
-- Messages for a particular chat are displayed in a generic chat format, with the latest message shown at the bottom.
-- Messages are left-aligned or right-aligned based on the sender, with BOT messages left-aligned and USER messages right-aligned.
+- Messages for a particular order are displayed in a generic chat format, with the latest message shown at the bottom.
+- Messages are left-aligned or right-aligned based on the sender, with BOT messages left-aligned and user messages right-aligned.
 - Two message types are supported: 'text'(normal) and 'optionedMessage', which are displayed differently.
 - Like Clicking on the "Request a Call" option in an opinionated message adds a message from the user saying "I want a callback".
 - Options for 'optionedMessage' messages are disabled if they are not the latest message in the chat.

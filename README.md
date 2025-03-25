@@ -4,7 +4,7 @@ This is Flipkart customer support app. It allows users to view a list of orders 
 
 ## Deployed at
 
-https://flipkart-help-chat.netlify.app/
+https://e-commerce-help-chat.netlify.app/
 
 ## Funtionalities
 
